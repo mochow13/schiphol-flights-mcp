@@ -1,9 +1,8 @@
-
-# Schipol Flights MCP
+# ✈️ Schipol Flights MCP
 
 MCP Server for [Schipol Flights API](https://www.schiphol.nl/nl/developer-center/our-flight-api-explored/)
 
-## What is MCP?
+## 🤔 What is MCP?
 
 MCP stands for Model-Context Protocol. It is a protocol that allows developers to expose APIs as tools for large language models. In this project, MCP is used to expose the Schiphol Flights API as a tool that can be used by Google's Gemini model. The MCP server is exposed as an HTTP server.
 
@@ -11,7 +10,7 @@ The `src/mcp/tools.ts` file defines the `get_flights` tool, which allows the mod
 
 Gemini is used as an example to showcase how MCP works. It can be easily replaced by models from other providers.
 
-## Answering Questions with the `get_flights` Tool
+## ❓ Answering Questions with the `get_flights` Tool
 
 The `get_flights` tool allows an LLM to answer a variety of questions about flights at Schiphol Airport. By using the parameters defined in `src/mcp/tools.ts`, the model can retrieve specific and detailed flight information.
 
@@ -37,13 +36,13 @@ Here are some examples of questions that can be answered:
 
 These examples demonstrate the tool's ability to handle queries about flight schedules, statuses, routes, airlines, and time-based events. Note that the model needs specific dates to successfully use the tool. If a date is not given, the model replies with asking for a date.
 
-## Installation
+## ⚙️ Installation
 
 ```bash
 npm install
 ```
 
-## Compiling
+## 💻 Compiling
 
 To compile the TypeScript code, run the following command:
 
@@ -53,7 +52,7 @@ npm run build
 
 This will create a `dist` directory with the compiled JavaScript files.
 
-## Usage
+## 🚀 Usage
 
 To start the server, run:
 
@@ -67,7 +66,7 @@ To run the server in development mode, run:
 npm run dev
 ```
 
-## Testing
+## 🧪 Testing
 
 To run the Gemini test script, use the following command:
 
