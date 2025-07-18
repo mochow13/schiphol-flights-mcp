@@ -17,22 +17,22 @@ The `get_flights` tool allows an LLM to answer a variety of questions about flig
 Here are some examples of questions that can be answered:
 
 *   **General flight information:**
-    *   "What are the flights arriving at Schiphol on ${date}?"
-    *   "What are the departure times for flights to New York (JFK) on ${date}?"
+    *   "What are the flights arriving at Schiphol on `${date}?`"
+    *   "What are the departure times for flights to New York (JFK) on `${date}?`"
 *   **Specific flight status:**
-    *   "Is flight KL0897 on time ${today}?"
-    *   "What is the status of flight BA430 ${today}?"
+    *   "Is flight KL0897 on time `${today}`?"
+    *   "What is the status of flight BA430 `${today}`?"
 *   **Route-based queries:**
-    *   "Which flights are going to London Heathrow (LHR) ${tomorrow}?"
-    *   "Are there any flights from Paris (CDG) ${today} afternoon?"
+    *   "Which flights are going to London Heathrow (LHR) `${tomorrow}`?"
+    *   "Are there any flights from Paris (CDG) `${today}` afternoon?"
 *   **Airline-specific information:**
-    *   "Find all flights for KLM (KL) on ${date}."
-    *   "What are the EasyJet flights departing ${tomorrow} evening?"
+    *   "Find all flights for KLM (KL) on `${date}`."
+    *   "What are the EasyJet flights departing `${tomorrow}` evening?"
 *   **Time-based searches:**
-    *   "What are the flights between 10:00 and 12:00 on ${date}?"
-    *   "Show me all arrivals in the next 2 hours for ${today}."
+    *   "What are the flights between 10:00 and 12:00 on `${date}`?"
+    *   "Show me all arrivals in the next 2 hours for `${today}`."
 *   **Delayed flights:**
-    *   "Are there any delayed flights from ${date}$?"
+    *   "Are there any delayed flights from `${date}`?"
 
 These examples demonstrate the tool's ability to handle queries about flight schedules, statuses, routes, airlines, and time-based events. Note that the model needs specific dates to successfully use the tool. If a date is not given, the model replies with asking for a date.
 
@@ -71,6 +71,13 @@ npm run dev
 To run the Gemini test script, use the following command:
 
 ```bash
+export GEMINI_API_KEY=<your-api-key>
 npm run test:gemini
 ```
 This will execute the `src/gemini-test.ts` file.
+
+## Notes
+
+- The API sends pages of 20 flights and only one page is generally fetched by the model. It might behave differently if running in a loop though. But in tests, we see only one page fetched.
+
+- The MCP server includes only one endpoint. The Schiphol Flights API has couple more. In future, we can implement the other endpoints.
