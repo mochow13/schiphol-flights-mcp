@@ -71,7 +71,6 @@ npm run dev
 To run the Gemini test script, use the following command:
 
 ```bash
-export GEMINI_API_KEY=<your-api-key>
 npm run test:gemini
 ```
 This will execute the `src/gemini-test.ts` file.
